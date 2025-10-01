@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Trends Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="container">
+  <h1>📊 Social Media Trends Dashboard</h1>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-platform="twitter">Twitter</button>
+    <button class="tab-btn" data-platform="instagram">Instagram</button>
+    <button class="tab-btn" data-platform="linkedin">LinkedIn</button>
+  </div>
+
+  <!-- Search -->
+  <div class="search-container">
+    <input type="text" id="keyword" placeholder="Enter hashtag or keyword">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+    <div class="card"><h3>Mentions</h3><p id="mentions">0</p></div>
+    <div class="card"><h3>Likes</h3><p id="likes">0</p></div>
+    <div class="card"><h3>Shares</h3><p id="shares">0</p></div>
+  </div>
+
+  <!-- Chart area -->
+  <div class="chart-area">
+    <canvas id="trendChart" width="800" height="400"></canvas>
+    <canvas id="sentimentChart" width="800" height="400" style="display:none;"></canvas>
+    <canvas id="linkedinChart" width="800" height="400" style="display:none;"></canvas>
+    <canvas id="followersChart" width="400" height="200"></canvas>
+  </div>
+
+  <!-- Analytics Add Form -->
+  <h3>Add Analytics</h3>
+  <input type="text" id="platform" placeholder="Platform">
+  <input type="number" id="followers" placeholder="Followers">
+  <input type="number" id="likesA" placeholder="Likes">
+  <input type="number" id="comments" placeholder="Comments">
+  <button onclick="addAnalyticsForm()">Add Analytics</button>
+
+  <p><a href="signup.html">Go to Login/Signup</a></p>
+</div>
+
+<div class="cursor" id="customCursor"></div>
+
+<script src="script.js"></script>
+<script src="frontend.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body { font-family: Arial; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; background:#222; color:#fff; }
+    input { margin:5px; padding:10px; width:200px; }
+    button { padding:10px 20px; margin-top:10px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button id="loginBtn">Login</button>
+
+  <p>Don't have an account? <a href="signup.html" style="color:#1dd1a1;">Signup</a></p>
+
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    loginBtn.addEventListener('click', () => {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if(!username || !password) return alert("Enter username & password");
+
+      // Simulate login (just check if user exists in localStorage token)
+      const token = btoa(username + ":" + password); // simple encoded token
+      localStorage.setItem("token", token);
+      alert("✅ Login successful");
+      window.location.href = "index.html"; // back to dashboard
+    });
+  </script>
+</body>
+</html>
